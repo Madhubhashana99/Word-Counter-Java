@@ -9,9 +9,14 @@ public class WordCounter {
         System.out.println("Enter a Sentence");
         String sentence = sc.nextLine();
 
-        Scanner.close();
+        sc.close();
 
         Map<String,Integer> wordCountMap = countWords(sentence);
+        System.out.println("Word Count:");
+        for (Map.Entry<String, Integer> entry : wordCountMap.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+
     }
 
     public static Map<String,Integer> countWords(String sentence){
